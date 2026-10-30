@@ -1,0 +1,162 @@
+:root {
+  --cor-fundo: #f4f7fb;
+  --cor-texto: #243047;
+  --cor-superficie: #ffffff;
+  --cor-primaria: #173b67;
+  --cor-destaque: #1769aa;
+  --cor-foco: #f0a500;
+  --cor-borda: #d7dfeb;
+  --espacamento-padrao: 1rem;
+}
+
+:root[data-tema="escuro"] {
+  --cor-fundo: #0f1722;
+  --cor-texto: #e6ecf5;
+  --cor-superficie: #1a2433;
+  --cor-primaria: #0b2442;
+  --cor-destaque: #3d8fd1;
+  --cor-borda: #34445c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+.cabecalho,
+.rodape {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--cor-primaria);
+  color: white;
+}
+
+.cabecalho h1,
+.cabecalho p {
+  margin: 0;
+}
+
+.cabecalho nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.cabecalho nav a {
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+.cabecalho nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+main {
+  width: min(90%, 760px);
+  margin: 2rem auto;
+}
+
+section {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--cor-superficie);
+  border-radius: 10px;
+}
+
+section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+label,
+input,
+select {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+input,
+select,
+button {
+  padding: 0.8rem;
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background-color: var(--cor-destaque);
+  color: white;
+  cursor: pointer;
+}
+
+#botao-tema {
+  padding: 0.4rem 0.8rem;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+.lista-cursos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espacamento-padrao);
+  margin-top: 1rem;
+}
+
+.curso {
+  padding: 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background-color: var(--cor-superficie);
+}
+
+.curso h3 {
+  margin-top: 0;
+  color: var(--cor-destaque);
+}
+
+.categoria {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .lista-cursos {
+    grid-template-columns: 1fr;
+  }
+}
